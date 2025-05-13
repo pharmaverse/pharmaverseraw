@@ -15,7 +15,7 @@ ds_raw <- pharmaversesdtm::ds |>
     IT.DSTERM = tools::toTitleCase(tolower(DSTERM)),
     OTHERSP = ifelse(DSCAT == "OTHER EVENT", IT.DSTERM, NA_character_),
     IT.DSTERM = ifelse(DSCAT == "OTHER EVENT", NA_character_, IT.DSTERM),
-    IT.DSDECOD = tools::toTitleCase(tolower(DSDECOD)), #CT
+    IT.DSDECOD = tools::toTitleCase(tolower(DSDECOD)),
     IT.DSDECOD = ifelse(DSCAT == "OTHER EVENT", NA_character_, IT.DSDECOD),
     DSDTCOL = ifelse(nchar(DSDTC) == 10, format(as.Date(DSDTC, format = "%Y-%m-%d"), "%m-%d-%Y"),
                      format(as.Date(DSDTC, format = "%Y-%m-%dT%H:%M"), "%m-%d-%Y")),
