@@ -1,6 +1,5 @@
 # Dataset: EX
-# Description: Raw exposure as collected dataset that can be used to
-# create pharmaversesdtm::ex
+# Description: Raw exposure as collected dataset used to create pharmaversesdtm::ex
 
 # Load pharmaversesdtm::ex and convert into raw dataset ----
 sdtm_ex <- pharmaversesdtm::ex

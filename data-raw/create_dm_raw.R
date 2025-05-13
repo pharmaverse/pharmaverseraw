@@ -1,5 +1,5 @@
 # Dataset: DM
-# Description: Raw demographics dataset that can be used to create pharmaversesdtm::dm
+# Description: Raw demographics dataset used to create pharmaversesdtm::dm
 
 # Load pharmaversesdtm::dm and convert into raw dataset ----
 sdtm_dm <- pharmaversesdtm::dm

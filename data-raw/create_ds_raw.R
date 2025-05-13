@@ -1,6 +1,5 @@
 # Dataset: DS
-# Description: Raw subject disposition dataset that can be used to
-# create pharmaversesdtm::ds
+# Description: Raw subject disposition dataset used to create pharmaversesdtm::ds
 
 # Load pharmaversesdtm::ds and convert into raw dataset ----
 sdtm_ds <- pharmaversesdtm::ds
