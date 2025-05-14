@@ -13,10 +13,12 @@ dm_raw <- sdtm_dm |>
     IT.RACE = tools::toTitleCase(tolower(RACE)),
     COUNTRY = COUNTRY,
     PLANNED_ARM = ifelse(ARM == "Xanomeline High Dose", "Xan High",
-                         ifelse(ARM == "Xanomeline Low Dose", "Xan Low", ARM)),
+      ifelse(ARM == "Xanomeline Low Dose", "Xan Low", ARM)
+    ),
     PLANNED_ARMCD = ARMCD,
     ACTUAL_ARM = ifelse(ACTARM == "Xanomeline High Dose", "Xan High",
-                        ifelse(ACTARM == "Xanomeline Low Dose", "Xan Low", ACTARM)),
+      ifelse(ACTARM == "Xanomeline Low Dose", "Xan Low", ACTARM)
+    ),
     ACTUAL_ARMCD = ACTARMCD,
     COL_DT = format(as.Date(DMDTC, format = "%Y-%m-%d"), "%m/%d/%Y"),
     IC_DT = format(as.Date(RFSTDTC, format = "%Y-%m-%d") - lubridate::days(7), "%m/%d/%Y")

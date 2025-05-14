@@ -14,7 +14,8 @@ ec_raw <- sdtm_ex |>
     DRUGAD = EXTRT,
     IT.ECSTDAT = format(as.Date(EXSTDTC, format = "%Y-%m-%d"), "%d-%b-%Y"),
     IT.ECENDAT = ifelse(is.na(EXENDTC), NA_character_,
-                              format(as.Date(EXENDTC, format = "%Y-%m-%d"), "%d-%b-%Y")),
+      format(as.Date(EXENDTC, format = "%Y-%m-%d"), "%d-%b-%Y")
+    ),
     IT.ECDSTXT = EXDOSE,
     IT.ECDOSU = "Milligram",
     DOSFM = tolower(EXDOSFRM),

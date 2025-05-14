@@ -1,6 +1,6 @@
 Type: Package
 Package: pharmaverseraw
-Title: Raw data for `pharmaversesdtm` package
+Title: Raw Data for `pharmaversesdtm` Package
 Version: 0.1.0
 Authors@R: c(
     person("Rammprasad", "Ganapathy", email = "ganapathy.rammprasad@gene.com",
@@ -30,4 +30,4 @@ Encoding: UTF-8
 Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2

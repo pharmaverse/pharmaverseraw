@@ -17,12 +17,15 @@ ds_raw <- pharmaversesdtm::ds |>
     IT.DSDECOD = tools::toTitleCase(tolower(DSDECOD)),
     IT.DSDECOD = ifelse(DSCAT == "OTHER EVENT", NA_character_, IT.DSDECOD),
     DSDTCOL = ifelse(nchar(DSDTC) == 10, format(as.Date(DSDTC, format = "%Y-%m-%d"), "%m-%d-%Y"),
-                     format(as.Date(DSDTC, format = "%Y-%m-%dT%H:%M"), "%m-%d-%Y")),
+      format(as.Date(DSDTC, format = "%Y-%m-%dT%H:%M"), "%m-%d-%Y")
+    ),
     DSTMCOL = ifelse(nchar(DSDTC) == 10, NA_character_, substr(DSDTC, 12, 16)),
     IT.DSSTDAT = format(as.Date(DSSTDTC, format = "%Y-%m-%d"), "%m-%d-%Y"),
     DEATHDT = ifelse(PATNUM == "701-1211", "01/14/2013",
-                     ifelse(PATNUM == "704-1445", "11/01/2014",
-                            ifelse(PATNUM == "710-1083", "08/02/2013", NA_character_)))
+      ifelse(PATNUM == "704-1445", "11/01/2014",
+        ifelse(PATNUM == "710-1083", "08/02/2013", NA_character_)
+      )
+    )
   ) |>
   dplyr::select(
     STUDY, PATNUM, SITENM, INSTANCE, FORM, FORML,
