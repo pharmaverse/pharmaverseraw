@@ -2,7 +2,8 @@
 
 <!-- badges: start -->
 
-<!-- [<img src="http://pharmaverse.org/shields/admiral.svg"/>](https://pharmaverse.org) [![Test <!-- Coverage](https://raw.githubusercontent.com/pharmaverse/pharmaversesdtm/badges/main/test-coverage.svg)](https://github.com/pharmaverse/pharmaversesdtm/actions/workflows/code-coverage.yml)-->
+[![CRAN
+status](https://www.r-pkg.org/badges/version/pharmaverseraw)](https://CRAN.R-project.org/package=pharmaverseraw)
 
 <!-- badges: end -->
 
@@ -16,7 +17,7 @@ Raw data for domains in the `pharmaversesdtm` package
 
 # Purpose {#purpose}
 
-To provide raw datasets which can be used to generate SDTM datsets in the `pharmaversesdtm` package.
+To provide raw datasets which can be used to generate SDTM datsets in the `pharmaversesdtm` package. The raw dataset does not align with any EDC (Electronic Data Capture) systems, meaning that are EDC agnostic. The raw datasets are also data standards agnostic, meaning some of the raw datasets are in CDASH  (Clinical Data Acquisition Standards Harmonization) and some are not in CDASH format. We have created such examples to showcase the edc and standards agnostic features of `sdtm.oak`. The annotated case report forms corresponding to the raw datasets are also present in the `inst\acrf` folder.
 
 # Installation {#installation}
 
@@ -42,7 +43,7 @@ is named as "ds_raw".
 
 # How To Update {#how-to-update}
 
-Firstly, make a GitHub issue in [`{pharmaverseraw}`](https://github.com/pharmaverse/pharmaverseraw) with the planned updates and tag `@pharmaverse/admiral` so that one of the development core team can sanity check the request. Then there are two main ways to extend the test data: either by adding new datasets or extending existing datasets with new records/variables. Whichever method you choose, it is worth noting the following:
+Firstly, make a GitHub issue in [`{pharmaverseraw}`](https://github.com/pharmaverse/pharmaverseraw) with the planned updates. Then there are two main ways to extend the test data: either by adding new datasets or extending existing datasets with new records/variables. Whichever method you choose, it is worth noting the following:
 
 -   Programs that generate raw data are stored in the `data-raw/` folder.
 -   Each of these programs is written as a standalone R script: if any packages need to be loaded for a given program, then call `library()` at the start of the program (but please do **not** call `library(pharmaverseraw)`).
@@ -51,6 +52,7 @@ Firstly, make a GitHub issue in [`{pharmaverseraw}`](https://github.com/pharmave
 -   The programs in `data-raw/` are stored within the `{pharmaverseraw}` GitHub repository, but they are **not** part of the `{pharmaverseraw}` package--the `data-raw/` folder is specified in `.Rbuildignore`.
 -   When you run a program that is in the `data-raw/` folder, you generate a dataset that is written to the `data/` folder, which will become part of the `{pharmaverseraw}` package.
 -   The names and sources of raw datasets are specified in `R/*.R`, for the purpose of generating documentation in the `man/` folder.
+-   The generated raw datasets should adhere with the structure and content in the corresponding sdtm domain in `pharmaversesdtm` package.
 
 ### Adding New Raw Datasets
 
