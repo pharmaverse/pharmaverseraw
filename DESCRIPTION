@@ -7,7 +7,7 @@ Authors@R: c(
     role = c("aut", "cre")),
     person("Shiyu", "Chen", email = "Shiyu.Chen@atorusresearch.com", 
     role = "aut")
-)
+    )
 Description: A set of raw datasets used to create SDTM domains in 
    `pharmaversesdtm` package. 
 License: Apache License (>= 2.0)
