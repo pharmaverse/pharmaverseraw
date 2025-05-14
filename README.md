@@ -6,7 +6,7 @@
 
 <!-- badges: end -->
 
-Raw data for domains in the pharmaverseraw package
+Raw data for domains in the `pharmaversesdtm` package
 
 -   [Purpose](#purpose)
 -   [Installation](#installation)
@@ -16,7 +16,7 @@ Raw data for domains in the pharmaverseraw package
 
 # Purpose {#purpose}
 
-To provide raw datasets which can be used to generate SDTM datsets in the pharmaversesdtm package.
+To provide raw datasets which can be used to generate SDTM datsets in the `pharmaversesdtm` package.
 
 # Installation {#installation}
 
@@ -32,7 +32,7 @@ remotes::install_github("pharmaverse/pharmaverseraw", ref = "main") # This comma
 
 # Data Sources {#data-sources}
 
-Raw datasets are created based upon the SDTM domains in `{pharmaversesdtm}` package.
+Raw datasets are created based upon the SDTM domains in `pharmaversesdtm` package.
 
 # Naming Conventions {#naming}
 
