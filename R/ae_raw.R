@@ -33,7 +33,7 @@
 #'     \item{IT.AEACN}{Action Taken with Study Treatment}
 #'     \item{AESCAN}{Involves Cancer}
 #'     \item{AESCNO}{Congenital Anomaly or Birth Defect}
-#'     \item{AESDIS}{Persist or Signif Disability/Incapacity}
+#'     \item{AEDIS}{Persist or Signif Disability/Incapacity}
 #'     \item{IT.AESDTH}{Results in Death}
 #'     \item{IT.AESHOSP}{Requires or Prolongs Hospitalization}
 #'     \item{IT.AESLIFE}{Is Life Threatening}

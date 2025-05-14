@@ -39,7 +39,8 @@ ae_raw <- sdtm_ae |>
         nchar(AESTDTC) == 7,
         format(as.Date(AESTDTC, format = "%Y-%m"), "%m/%Y"),
         ifelse(nchar(AESTDTC) == 4, format(as.Date(AESTDTC, format = "%Y"), "%Y"),
-               AESTDTC)
+          AESTDTC
+        )
       )
     ),
     IT.AEENDAT = ifelse(
@@ -49,7 +50,8 @@ ae_raw <- sdtm_ae |>
         nchar(AEENDTC) == 7,
         format(as.Date(AEENDTC, format = "%Y-%m"), "%m/%Y"),
         ifelse(nchar(AEENDTC) == 4, format(as.Date(AEENDTC, format = "%Y"), "%Y"),
-               AEENDTC)
+          AEENDTC
+        )
       )
     )
   ) |>

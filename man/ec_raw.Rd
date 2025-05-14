@@ -24,7 +24,8 @@ A data frame with 14 columns:
 }
 }
 \source{
-\href{https://github.com/pharmaverse/pharmaverseraw/main/data/ec_raw.rda}{Access the source of the exposure as collected dataset.}
+\link{Access the source of the exposure as collected dataset.}
+(https://github.com/pharmaverse/pharmaverseraw/main/data/ec_raw.rda)
 }
 \usage{
 ec_raw

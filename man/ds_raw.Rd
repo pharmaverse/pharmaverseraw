@@ -23,7 +23,8 @@ A data frame with 13 columns:
 }
 }
 \source{
-\href{https://github.com/pharmaverse/pharmaverseraw/main/data/ds_raw.rda}{Access the source of the subject disposition dataset.}
+\link{Access the source of the subject disposition dataset.}
+(https://github.com/pharmaverse/pharmaverseraw/main/data/ds_raw.rda)
 }
 \usage{
 ds_raw
