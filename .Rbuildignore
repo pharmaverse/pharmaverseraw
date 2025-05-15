@@ -19,6 +19,7 @@
 ^dev$
 ^vignettes/adxx\.Rmd$
 ^vignettes/pharmaverseraw\.Rmd$
+^vignettes/articles$
 ^data-raw$
 ^CRAN-SUBMISSION$
 ^cran-comments\.md$
