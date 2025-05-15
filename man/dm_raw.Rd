@@ -25,10 +25,6 @@ A data frame with 13 columns:
 \source{
 \href{https://github.com/pharmaverse/pharmaverseraw/main/data/dm_raw.rda}{Access the source of the demographics dataset.}
 }
-\source{
-\link{Access the source of the demographics dataset.}
-(https://github.com/pharmaverse/pharmaverseraw/main/data/dm_raw.rda)
-}
 \usage{
 dm_raw
 }
