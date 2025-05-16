@@ -1,7 +1,8 @@
+---
 # Source: https://github.com/pharmaverse/admiralci
 # Common workflows designed for Admiral
 # but can be easily used by any other R package
-name: Admiral Workflows
+name: admiral CI/CD Workflows
 
 on:
   # 'workflow_dispatch' gives you the ability
@@ -121,9 +122,9 @@ jobs:
     needs: get_r_version
     with:
       r-version: "${{ needs.get_r_version.outputs.r-version }}"
-  # vbump:
-  #   name: Version Bump
-  #   if: github.event_name == 'push'
-  #   uses: insightsengineering/r.pkg.template/.github/workflows/version-bump.yaml@main
-  #   secrets:
-  #     REPO_GITHUB_TOKEN: ${{ secrets.PHARMAVERSE_BOT }}
+  vbump:
+    name: Version Bump
+    if: github.event_name == 'push'
+    uses: insightsengineering/r.pkg.template/.github/workflows/version-bump.yaml@main
+    secrets:
+      REPO_GITHUB_TOKEN: ${{ secrets.PHARMAVERSE_BOT }}

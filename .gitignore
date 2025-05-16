@@ -41,9 +41,9 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
-admiraltemplate.Rcheck/
-admiraltemplate*.tar.gz
-admiraltemplate*.tgz
+pharmaverseraw.Rcheck/
+pharmaverseraw*.tar.gz
+pharmaverseraw*.tgz
 
 # MacOS
 .DS_Store
