@@ -43,6 +43,6 @@
 #'     \item{IT.AEENDAT}{End Date/Time of Adverse Event}
 #'   }
 #'
-#' @source [Access the source of the adverse events dataset.](https://github.com/pharmaverse/pharmaverseraw/main/data/ae_raw.rda)
+#' @source [Access the source of the adverse events dataset.](https://github.com/pharmaverse/pharmaverseraw/blob/main/data/ae_raw.rda)
 #' @author Shiyu Chen
 "ae_raw"
