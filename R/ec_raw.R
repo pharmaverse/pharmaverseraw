@@ -25,6 +25,6 @@
 #'     \item{IT.ECROUTE}{Route of Administration}
 #'   }
 #'
-#' @source [Access the source of the exposure as collected dataset.](https://github.com/pharmaverse/pharmaverseraw/main/data/ec_raw.rda)
+#' @source [Access the source of the exposure as collected dataset.](https://github.com/pharmaverse/pharmaverseraw/blob/main/data/ec_raw.rda)
 #' @author Shiyu Chen
 "ec_raw"

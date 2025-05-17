@@ -42,7 +42,7 @@ A data frame with 32 columns:
 }
 }
 \source{
-\href{https://github.com/pharmaverse/pharmaverseraw/main/data/ae_raw.rda}{Access the source of the adverse events dataset.}
+\href{https://github.com/pharmaverse/pharmaverseraw/blob/main/data/ae_raw.rda}{Access the source of the adverse events dataset.}
 }
 \usage{
 ae_raw

@@ -24,6 +24,6 @@
 #'     \item{IC_DT}{Date of Informed Consent}
 #'   }
 #'
-#' @source [Access the source of the demographics dataset.](https://github.com/pharmaverse/pharmaverseraw/main/data/dm_raw.rda)
+#' @source [Access the source of the demographics dataset.](https://github.com/pharmaverse/pharmaverseraw/blob/main/data/dm_raw.rda)
 #' @author Shiyu Chen
 "dm_raw"
