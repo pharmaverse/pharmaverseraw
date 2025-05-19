@@ -23,7 +23,7 @@ A data frame with 13 columns:
 }
 }
 \source{
-\href{https://github.com/pharmaverse/pharmaverseraw/main/data/dm_raw.rda}{Access the source of the demographics dataset.}
+\href{https://github.com/pharmaverse/pharmaverseraw/blob/main/data/dm_raw.rda}{Access the source of the demographics dataset.}
 }
 \usage{
 dm_raw

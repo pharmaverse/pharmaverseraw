@@ -24,6 +24,6 @@
 #'     \item{DEATHDT}{Death Date of Subject}
 #'   }
 #'
-#' @source [Access the source of the subject disposition dataset.](https://github.com/pharmaverse/pharmaverseraw/main/data/ds_raw.rda)
+#' @source [Access the source of the subject disposition dataset.](https://github.com/pharmaverse/pharmaverseraw/blob/main/data/ds_raw.rda)
 #' @author Shiyu Chen
 "ds_raw"
