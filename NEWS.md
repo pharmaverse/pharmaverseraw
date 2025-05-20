@@ -6,7 +6,7 @@
 
  - Added raw datasets, R scripts, data documentations and annotated CRFs
  for datasets used to generate SDTM AE, DM, EX, DS datasets 
- in `pharmaversesdtm` package
+ in pharmaversesdtm package
 
  
 

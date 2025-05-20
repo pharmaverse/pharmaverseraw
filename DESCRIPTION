@@ -1,6 +1,6 @@
 Type: Package
 Package: pharmaverseraw
-Title: Raw Data for `pharmaversesdtm` Package
+Title: Raw Data for 'pharmaversesdtm' Package
 Version: 0.1.0
 Authors@R: c(
     person("Rammprasad", "Ganapathy", email = "ganapathy.rammprasad@gene.com",
@@ -9,7 +9,7 @@ Authors@R: c(
     role = "aut")
     )
 Description: A set of raw datasets used to create SDTM domains in 
-   `pharmaversesdtm` package. 
+   'pharmaversesdtm' package. 
 License: Apache License (>= 2.0)
 URL: https://pharmaverse.github.io/pharmaverseraw/,
     https://github.com/pharmaverse/pharmaverseraw/
