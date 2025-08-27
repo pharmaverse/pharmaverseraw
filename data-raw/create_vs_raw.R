@@ -20,7 +20,7 @@ vs_raw2 <- sdtm_vs |>
     values_from = VSORRES
   )
 
-vs_raw <- dplyr::left_join(vs_raw2, vs_raw1)|>
+vs_raw <- dplyr::left_join(vs_raw2, vs_raw1) |>
   dplyr::mutate(
     STUDY = "CDISCPILOT01",
     PATNUM = substr(USUBJID, 4, 11),
