@@ -5,9 +5,11 @@
 sdtm_vs <- pharmaversesdtm::vs
 
 vs_raw1 <- sdtm_vs |>
-  dplyr::arrange(USUBJID,VSDTC, VSTPTNUM) |>
-  dplyr::select(STUDYID, USUBJID, VISIT, VSDTC, VSTPT, VSSTAT, VSLOC, VSPOS,
-                VSTESTCD, VSORRES) |>
+  dplyr::arrange(USUBJID, VSDTC, VSTPTNUM) |>
+  dplyr::select(
+    STUDYID, USUBJID, VISIT, VSDTC, VSTPT, VSSTAT, VSLOC, VSPOS,
+    VSTESTCD, VSORRES
+  ) |>
   tidyr::pivot_wider(
     id_cols = c(STUDYID, USUBJID, VISIT, VSDTC, VSTPT, VSSTAT, VSLOC, VSPOS),
     names_from = VSTESTCD,
@@ -26,15 +28,19 @@ vs_raw <- vs_raw1a |>
     IT.HEIGHT_VSORRES = HEIGHT,
     IT.WEIGHT = WEIGHT,
     IT.TEMP = TEMP,
-    IT.TEMP_LOC = dplyr::case_when(is.na(TEMP) ~ NA_character_,
-      !is.na(TEMP)  ~ VSLOC,
-      TRUE ~ NA_character_),
+    IT.TEMP_LOC = dplyr::case_when(
+      is.na(TEMP) ~ NA_character_,
+      !is.na(TEMP) ~ VSLOC,
+      TRUE ~ NA_character_
+    ),
     TMPTC = tools::toTitleCase(tolower(VSTPT)),
     SYS_BP = SYSBP,
     DIA_BP = DIABP,
-    SUBPOS = dplyr::case_when(is.na(TEMP) ~ VSPOS,
-                       !is.na(TEMP)  ~ NA_character_,
-                       TRUE ~ NA_character_)
+    SUBPOS = dplyr::case_when(
+      is.na(TEMP) ~ VSPOS,
+      !is.na(TEMP) ~ NA_character_,
+      TRUE ~ NA_character_
+    )
   ) |>
   dplyr::select(
     STUDY, PATNUM, INSTANCE, FORM, FORML, VTLD, IT.HEIGHT_VSORRES,
