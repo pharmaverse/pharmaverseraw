@@ -165,6 +165,15 @@ vs_pulse <-
     ct_spec = study_ct,
     ct_clst = "C66770",
     id_vars = oak_id_vars()
+  ) %>%
+  # Map VSPOS using assign_ct algorithm
+  assign_ct(
+    raw_dat = vs_raw,
+    raw_var = "SUBPOS",
+    tgt_var = "VSPOS",
+    ct_spec = study_ct,
+    ct_clst = "C71148",
+    id_vars = oak_id_vars()
   )
 
 # Map topic variable TEMP from raw variable TEMP and its qualifiers.
@@ -385,13 +394,14 @@ vs <- vs_combined %>%
     STUDYID = "CDISCPILOT01",
     DOMAIN = "VS",
     VSCAT = "VITAL SIGNS",
-    USUBJID = paste0("test_study", "-", .data$patient_number),
+    USUBJID = paste0("01", "-", .data$patient_number),
     VSSTRESC = ifelse(is.na(VSSTRESC), VSORRES, VSSTRESC),
     VSSTRESN = as.numeric(VSSTRESC),
     VSSTRESU = ifelse(is.na(VSSTRESU), VSORRESU, VSSTRESU),
     VSELTM = ifelse(is.na(VSTPT), NA, paste0("PT", readr::parse_number(VSTPT), "M")),
     VSTPTREF = ifelse(is.na(VSPOS), NA, paste("PATIENT", VSPOS))
   ) %>%
+  arrange(USUBJID, VSTESTCD, as.numeric(VISITNUM), as.numeric(VSTPTNUM)) %>%
   derive_seq(tgt_var = "VSSEQ",
              rec_vars= c("USUBJID", "VSTESTCD")) %>%
   derive_study_day(
@@ -412,12 +422,29 @@ vs <- vs_combined %>%
   dplyr::select("STUDYID", "DOMAIN", "USUBJID", "VSSEQ", "VSTESTCD", "VSTEST", "VSPOS", "VSORRES", "VSORRESU", "VSSTRESC", "VSSTRESN", "VSSTRESU", "VSLOC", "VISITNUM", "VISIT", "VSDTC", "VSDY", "VSTPT", "VSTPTNUM", "VSELTM", "VSTPTREF")
 
 ### TODO: Remove the section below before adding to the workshop repo
+
+# Total number of records in the output is 29635. In pharmaversesdtm, the vs domain has 29643 records. Need to filter out the NOT DONE records in pharmaversesdtm::vs to get the numbers match.
 compare <- pharmaversesdtm::vs %>%
+  filter(is.na(VSSTAT)) %>%
   select(names(vs))
 
+# Compare one subject
+subject_1 <- vs %>%
+  filter(USUBJID == "01-705-1281")
+
+subject_1_compare <- compare %>%
+  filter(USUBJID == "01-705-1281")
+
+diffdf::diffdf(subject_1, subject_1_compare)
+
+# Compare entire datasets
 diffdf::diffdf(vs, compare)
 
+# KNOWN DIFFERENCES:
+# 1. VSORRESU, VSSTRESU: "beats/min" - in CDISC's Controlled Terminology file, the unit is "beats/min" whereas in pharmaversesdtm::vs, the unit is in upper case
+# 2. VSSTRESC and VSSTRESN - due to rounding and decimal place differences
+
 # NOTES:
-# VSSTAT is needed for BLFL calculation. As the information is removed from raw, should we consider removing VSBLFL variable?
-# VISITDY variable is not derived in the output. Since TV domain is not available in pharmaversesdtm package, should we consider remove VISITDY variable?
-# Total number of records is 29635. In pharmaversesdtm, the vs domain has 29643 records.
+# 1. VSSTAT is needed for BLFL calculation. As the information is removed from raw, should we consider removing VSBLFL variable or create a blank VSSTAT variable?
+# 2. VISITDY variable is not derived in the output. Since TV domain is not available in pharmaversesdtm package, we might need to skip VISITDY?
+
